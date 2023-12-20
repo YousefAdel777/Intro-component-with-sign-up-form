@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+:root {
+    --clr-red: hsl(0, 100%, 74%);
+    --clr-green: #37cc8a;
+    --clr-hover-green: #77e2b4;
+    --clr-border-green: #3eb37f;
+    --clr-accent-blue: hsl(248, 32%, 49%);
+    --clr-dark-blue: hsl(249, 10%, 26%);
+    --clr-gray-blue: hsl(246, 25%, 77%);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+input {
+    outline: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1150px;
+    }
+}
+
+.page {
+    background-image: url(../images/bg-intro-desktop.png);
+    background-color: var(--clr-red);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.25rem;
+}
+
+.intro-text {
+    flex-basis: 48%;
+    position: relative;
+    bottom: 15px;
+}
+
+.intro-text h1 {
+    margin: 0;
+    margin-bottom: 2.5rem;
+    font-size: 3rem;
+    color: white;
+}
+
+.intro-text p {
+    font-size: 1rem;
+    color: #eee;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.form {
+    flex-basis: 52%;
+}
+
+.form .free-trial {
+    width: 100%;
+    background-color: var(--clr-accent-blue);
+    color: white;
+    font-weight: 700;
+    padding: 1.25rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.form .free-trial span {
+    font-weight: 400;
+}
+
+.form form {
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.form form input {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 1.125rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: .3s;
+}
+
+.form form input:not(.warning) {
+    border: #dedede 1px solid;
+    margin-bottom: 1.5rem;
+}
+
+.form form input:focus {
+    border-color: var(--clr-dark-blue);
+}
+
+.form form button {
+    background-color: var(--clr-green);
+    color: white;
+    font-weight: 400;
+    font-size: 1.125rem;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: solid var(--clr-border-green);
+    padding: 1.125rem;
+    border-radius: 8px;
+    margin-bottom: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.form form button:hover {
+    background-color: var(--clr-hover-green);
+}
+
+.form form p:last-child {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    color: #ccc;
+}
+
+.form form p a {
+    color: var(--clr-red);
+    text-decoration: none;
+}
+
+.form form label {
+    position: relative;
+}
+
+.form form label img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    right: 2rem;
+    display: none;
+}
+
+.warning {
+    margin-bottom: .5rem;
+    border: 1px solid var(--clr-red);
+    color: var(--clr-red);
+}
+
+.error {
+    color: var(--clr-red);
+    text-align: right;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+@media (max-width: 991px) {
+    .page {
+        background-image: url(../images/bg-intro-mobile.png);
+    }
+    .content {
+        flex-flow: column;
+        gap: 3rem;
+    }
+    .container {
+        padding-block: 5rem;
+    }
+    .intro-text {
+        text-align: center;
+    }
+    .intro-text h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    .intro-text p {
+        max-width: 32ch;
+        margin-inline: auto;
+    }
+    .form .free-trial p {
+        line-height: 1.6;
+        max-width: 18ch;
+        margin-inline: auto;
+    }
+    .form form p:last-child {
+        line-height: 1.6;
+    }
+    .form form {
+        padding: 1.125rem;
+    }
+    .form form button {
+        font-size: 1rem;
+    }
+    .form form input{   
+        font-size: 1rem;
+    }
+    .error {
+        font-size: 0.75rem;
+    }
+    .form form label img {
+        right: 1rem;
+    }
+}
